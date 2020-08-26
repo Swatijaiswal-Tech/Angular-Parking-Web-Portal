@@ -1,0 +1,73 @@
+
+<ng-container *ngIf="!isCarParked">
+<div> 
+  <p> 
+    <span>Total Parking Slot {{slot.total}}</span><br/>
+    <span>Available Parking Slot {{this.availbleSlot}} </span> <br/>
+    <span *ngIf="isCheckMoney">Total WalletMoney {{this.totalMoney}} </span> &nbsp;&nbsp; 
+    <button class="button-1" (click)="parkaCar()">Park a Car </button> &nbsp;&nbsp;   
+    <button class="button-2" (click)="checkMoney()">Query Data </button></p>
+  
+</div>    
+<br/>
+<div> 
+    <button class="reset" (click)="resetSearch()">Reset </button>   &nbsp;&nbsp; 
+    <button class="search-button" (click)="searchByCarNumber()">search </button>  &nbsp;&nbsp; 
+     <select name="cars" id="cars" class="filter" (change)="filerByColor($event)">  &nbsp;&nbsp; 
+     <option value=""  >Choose Color</option>
+     <option [value]=color  *ngFor="let color of colorList">{{color}}</option>
+      </select>
+     <span> <input class="search" name="search"  [(ngModel)]="searchTerm" type="text" placeholder="TYPE CAR NUMBER "/> </span> 
+  </div>   
+<br/>
+<br/>
+<div >
+    <table>
+        <tr>
+        <th>#</th>
+        <th>Car No.</th>  
+        <th>Color</th>
+        <th>Slot No.</th>
+        <th>Date Time</th>
+        <th></th>
+        </tr>
+        <tr *ngFor="let car of carDetails; let i = index">
+        <td>{{i+1}}</td>
+        <td>{{car.carNum}}</td>
+        <td>{{car.color}}</td>
+        <td>{{car.slotNum}}</td>
+        <td>{{car.date| date:'medium'}}</td>
+        <td><button class="remove" (click)="releaseCarSlot(i)">Remove</button></td>
+        </tr>       
+      </table>
+</div>   
+</ng-container>
+<div class="container" *ngIf="isCarParked">
+    <form name="form" [formGroup]="parkingFrom" (ngSubmit)="onSubmit()" novalidate >
+      <div class="row">
+        <div class="col-25">
+          <label for="fname">Car Number</label>
+        </div>
+        <div class="col-75">
+          <input type="text" 
+           formControlName="carNumber"
+           placeholder="Enter car number"
+           >
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="lname">Color</label>
+        </div>
+        <div class="col-75">
+          <input type="text" 
+          formControlName="color"
+          placeholder="Enter Color"
+          >
+        </div>
+      </div>
+      <div class="row">
+        <button type="submit" value="Submit" class="button-2"> Submit</button>
+      </div>
+    </form>
+  </div>

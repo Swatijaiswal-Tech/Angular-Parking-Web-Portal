@@ -1,0 +1,125 @@
+button {
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+    margin: 0;
+  }
+  span {
+    font-size: small;
+  }
+
+  .button-1 {
+    background-color: rgb(240, 41, 6);
+  
+  }
+
+  .button-2 {
+    background-color: rgb(55, 196, 67);
+    margin-right: 10px;
+  }
+  .search-button{
+    background-color: rgb(57, 152, 111); 
+    float: right;
+    margin-right: 10px;
+  }
+  .reset {
+    background-color: rgb(143, 147, 143); 
+    float: right;
+    margin-right: 10px;
+  }
+
+  .remove {
+    float: left;  
+    text-align: center; 
+    background-color: rgb(223, 205, 105);
+  }
+  table, td, th {  
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th, td {
+    padding: 15px;
+  }
+  
+  tr:nth-child(1) {
+      background-color: #5c5555;
+      color: white}
+
+      * {
+        box-sizing: border-box;
+      }
+      
+      input {
+        width: 50%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        resize: vertical;
+      }
+
+      .search {
+        width: 15%;
+        padding: 11px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        resize: vertical;
+        float: right;
+        margin-right: 10px;
+      }
+
+      .filter {
+        width: 11%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        resize: vertical;
+        float: right;
+        margin-right: 10px;
+      }
+      
+      label {
+        padding: 12px 12px 12px 0;
+        display: inline-block;
+      }
+   
+      .container {
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
+      }
+      
+      .col-25 {
+        float: left;
+        width: 25%;
+        margin-top: 6px;
+      }
+      
+      .col-75 {
+        float: left;
+        width: 75%;
+        margin-top: 6px;
+      }
+      
+      /* Clear floats after the columns */
+      .row:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+      
+      /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+      @media screen and (max-width: 600px) {
+        .col-25, .col-75, input[type=submit] {
+          width: 100%;
+          margin-top: 0;
+        }
+      }
